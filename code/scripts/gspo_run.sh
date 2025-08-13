@@ -1,0 +1,12 @@
+python main.py \
+  --method gspo \
+  --model_name_or_path gpt2 \
+  --train_path /ssd/chenxi/data/train.jsonl \
+  --test_path /ssd/chenxi/data/test.jsonl \
+  --output_dir /ssd/chenxi/outputs_gspo \
+  --group_size 4 \
+  --batch_prompts 8 \
+  --clip_eps 0.2 \
+  --use_ref_kl True \
+  --seq_logprob_reduce sum \
+  --reward_mode rule

@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Train LLM",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/ssd/chenxi/works/main.py",
+            "console": "integratedTerminal",
+            "cwd": "/ssd/chenxi/works",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": ".:$PYTHONPATH"
+            },
+            "args": [
+                "--method",
+                "sft", // ppo | grpo | dpo | gspo | sft
+                "--model_name_or_path",
+                "pretrained_moels/Qwen2.5-0.5B",
+                "--train_path",
+                "data/train.jsonl",
+                "--test_path",
+                "data/test.jsonl",
+                "--output_dir",
+                "outputs",
+                "--reward_mode",
+                "rule"
+            ]
+        }
+    ]
+]
+}
