@@ -15,16 +15,17 @@
             "name": "Train LLM",
             "type": "debugpy",
             "request": "launch",
-            "program": "/ssd/chenxi/works/main.py",
+            "program": "/ssd/chenxi/works/code/main.py",
             "console": "integratedTerminal",
-            "cwd": "/ssd/chenxi/works",
+            "cwd": "/ssd/chenxi/works/code",
             "justMyCode": false,
             "env": {
-                "PYTHONPATH": ".:$PYTHONPATH"
+                "PYTHONPATH": ".:$PYTHONPATH",
+                "CUDA_VISIBLE_DEVICES": "2"
             },
             "args": [
                 "--method",
-                "sft", // ppo | grpo | dpo | gspo | sft
+                "ppo", // ppo | grpo | dpo | gspo | sft
                 "--model_name_or_path",
                 "pretrained_moels/Qwen2.5-0.5B",
                 "--train_path",

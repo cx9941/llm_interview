@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
-import os, json, math
 from typing import List, Dict, Tuple
 import torch
-import torch.nn.functional as F
-from datasets import Dataset
-from transformers import AutoTokenizer
 
 class Rewarder:
     def __init__(self, mode="rule"):
